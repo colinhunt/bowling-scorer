@@ -1,4 +1,4 @@
-package org.colinhunt.bowlingscorer.player;
+package org.colinhunt.bowlingscorer.scorecard;
 
 public class Frame
 {

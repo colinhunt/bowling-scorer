@@ -3,21 +3,24 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import org.colinhunt.bowlingscorer.bowlingmatch.BowlingMatch;
-import org.colinhunt.bowlingscorer.player.Frame;
+import org.colinhunt.bowlingscorer.scorecard.Frame;
 import org.colinhunt.bowlingscorer.player.Player;
-import org.colinhunt.bowlingscorer.player.ScoreCard;
+import org.colinhunt.bowlingscorer.scorecard.ScoreCard;
 
 public class Main
 {
     public static void main(String[] args) throws IOException
     {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.println("Welcome to bowling scorer!");
         System.out.print("Please enter player 1 name > ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         String player1name = reader.readLine();
         System.out.println("Hi " + player1name);
 
         System.out.print("Please enter player 2 name > ");
+
         String player2name = reader.readLine();
         System.out.println("Hi " + player2name);
 

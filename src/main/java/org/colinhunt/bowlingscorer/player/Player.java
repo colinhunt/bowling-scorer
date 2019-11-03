@@ -1,5 +1,7 @@
 package org.colinhunt.bowlingscorer.player;
 
+import org.colinhunt.bowlingscorer.scorecard.ScoreCard;
+
 public class Player
 {
     private final String name;
