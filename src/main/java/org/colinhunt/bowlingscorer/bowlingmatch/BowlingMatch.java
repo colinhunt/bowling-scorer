@@ -4,14 +4,15 @@ import org.colinhunt.bowlingscorer.player.Player;
 
 public class BowlingMatch
 {
-    private final Player player1;
-    private final Player player2;
+    private Player lastPlayer;
+    private Player currentPlayer;
+    private int rolls = 0;
+
 
     public BowlingMatch(Player player1, Player player2)
     {
-
-        this.player1 = player1;
-        this.player2 = player2;
+        this.currentPlayer = player1;
+        this.lastPlayer = player2;
     }
 
     public boolean isOver()
@@ -21,12 +22,17 @@ public class BowlingMatch
 
     public Player currentPlayer()
     {
-        return player1;
+        return currentPlayer;
     }
 
     public void roll(int pinsDown)
     {
-
+        if (++rolls % 2 == 0)
+        {
+            Player nextPlayer = lastPlayer;
+            lastPlayer = currentPlayer;
+            currentPlayer = nextPlayer;
+        }
     }
 
     public Player getWinner()

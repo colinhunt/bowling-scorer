@@ -15,4 +15,28 @@ public class BowlingMatchTest
 
         assertSame(player1, match.currentPlayer());
     }
+
+    @Test
+    public void currentPlayerReturnsPlayer1AfterFirstRoll()
+    {
+        Player player1 = new Player("player1");
+        BowlingMatch match = new BowlingMatch(player1, new Player("player2"));
+        match.roll(0);
+
+        assertSame(player1, match.currentPlayer());
+    }
+
+    @Test
+    public void currentPlayerReturnsPlayer2AfterSecondRoll()
+    {
+        Player player1 = new Player("player1");
+        Player player2 = new Player("player2");
+        BowlingMatch match = new BowlingMatch(player1, player2);
+        match.roll(0);
+        match.roll(0);
+
+        assertSame(player2, match.currentPlayer());
+    }
+
+
 }
